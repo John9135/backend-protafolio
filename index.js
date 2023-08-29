@@ -1,4 +1,6 @@
 const express = require("express")
+const mongoose = require("mongoose")
+require("dotenv").config()
 
 const app = express()
 const port = 3005
@@ -8,6 +10,10 @@ app.get('/', (req, res) => {
     res.send('Holamundo')
 })
 
-app.listen(port, ()=> {
+mongoose.connect(process.env.MONGO_DB_URI)
+    .then(() => console.log('conect db'))
+    .catch((err) => console.error(err))
+
+app.listen(port, () => {
     console.log(`listeng in port ${port}`)
 })
