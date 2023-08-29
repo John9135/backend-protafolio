@@ -2,9 +2,14 @@ const express = require("express")
 const mongoose = require("mongoose")
 require("dotenv").config()
 
+const presentationRouters = require('./routers/presentation')
+
 const app = express()
 const port = 3005
+
 app.set('port', port)
+app.use(express.json())
+app.use('/api/presentation', presentationRouters)
 
 app.get('/', (req, res) => {
     res.send('Holamundo')
