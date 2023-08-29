@@ -16,6 +16,15 @@ const controllerPresentation = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+
+    getPresentation: async (req, res) => {
+        try {
+            const presentation = await Presentation.find({})
+            res.json(presentation)
+        } catch (error) {
+            return res.status(500).json({ msg: error })
+        }
     }
 }
 
