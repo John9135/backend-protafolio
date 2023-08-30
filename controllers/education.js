@@ -12,9 +12,11 @@ const controllerEducation = {
                 title: title,
                 duration: duration
             })
-            res.json({msg: 'create education'})
+            res.json({ msg: 'create education' })
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
     }
 }
+
+module.exports = controllerEducation
