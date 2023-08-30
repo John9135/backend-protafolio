@@ -14,6 +14,15 @@ const controllerSkill = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+
+    getSkills: async (req, res) => {
+        try {
+            const skills = await Skills.find()
+            res.json({ skills })
+        } catch (error) {
+            return res.status(500).json({ msg: error.message })
+        }
     }
 }
 
