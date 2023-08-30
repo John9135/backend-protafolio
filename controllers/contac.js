@@ -18,6 +18,15 @@ const controllerContact = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+
+    getContat: async (req, res) => {
+        try {
+            const contac = await Contact.find()
+            res.json(contac)
+        } catch (error) {
+            return res.status(500).json({ msg: error.message })
+        }
     }
 }
 
