@@ -7,6 +7,7 @@ const educationRouters = require('./routers/education')
 const experienceRouters = require('./routers/experience')
 const skillsRouters = require('./routers/skills')
 const contactRouters = require('./routers/contact')
+const portfolioRouters = require('./routers/portfolio')
 
 const app = express()
 const port = 3005
@@ -18,6 +19,7 @@ app.use('/api/education', educationRouters)
 app.use('/api/experience', experienceRouters)
 app.use('/api/skills', skillsRouters)
 app.use('/api/contact', contactRouters)
+app.use('/api/portfolio', portfolioRouters)
 
 app.get('/', (req, res) => {
     res.send('Holamundo')
