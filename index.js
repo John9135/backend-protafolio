@@ -7,7 +7,7 @@ const educationRouters = require('./routers/education')
 const experienceRouters = require('./routers/experience')
 const skillsRouters = require('./routers/skills')
 const contactRouters = require('./routers/contact')
-const portfolioRouters = require('/routers/portfolio')
+const portfolioRouters = require('./routers/portfolio')
 
 const app = express()
 const port = 3005
