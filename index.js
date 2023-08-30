@@ -4,6 +4,7 @@ require("dotenv").config()
 
 const presentationRouters = require('./routers/presentation')
 const educationRouters = require('./routers/education')
+const experienceRouters = require('./routers/experience')
 
 const app = express()
 const port = 3005
@@ -12,6 +13,7 @@ app.set('port', port)
 app.use(express.json())
 app.use('/api/presentation', presentationRouters)
 app.use('/api/education', educationRouters)
+app.use('/api/experience', experienceRouters)
 
 app.get('/', (req, res) => {
     res.send('Holamundo')
