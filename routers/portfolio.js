@@ -6,5 +6,6 @@ const router = express.Router()
 
 router.post('/create', controllerPortfolio.create)
 router.get('/',controllerPortfolio.getPorfolio)
+router.patch('/update/:id', controllerPortfolio.updatePortfolio)
 
 module.exports = router
