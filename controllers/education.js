@@ -23,7 +23,25 @@ const controllerEducation = {
             const education = await Education.find({})
             res.json({ education })
         } catch (error) {
-            return res.status(500).json({ msg: erro.message })
+            return res.status(500).json({ msg: error.message })
+        }
+    },
+
+    updateEducation: async (req, res) => {
+        try {
+            const { id } = req.params
+            const institution_name = req.body.institution_name
+            const title = req.body.title
+            const duration = req.body.duration
+
+            await Education.findByIdAndUpdate(id, {
+                institution_name: institution_name,
+                title: title,
+                duration: duration
+            })
+            res.json({ msg: "update education" })
+        } catch (error) {
+            return res.status(500).json({ msg: error.message })
         }
     }
 }
