@@ -47,6 +47,16 @@ const controllerExperience = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+
+    deleteExperience: async (req, res) => {
+        try {
+            const {id} = req.params
+            await Experience.findByIdAndDelete(id)
+            res.json({msg: 'Delete experience'})
+        } catch (error) {
+            return res.status(500).json({ msg: error.message })
+        }
     }
 }
 
