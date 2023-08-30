@@ -18,6 +18,15 @@ const controllerPortfolio = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+
+    getPorfolio: async (req, res) => {
+        try {
+            const portfolio = await Portfolio.find()
+            res.json({ portfolio })
+        } catch (error) {
+            return res.json(500).json({ msg: error.message })
+        }
     }
 }
 
