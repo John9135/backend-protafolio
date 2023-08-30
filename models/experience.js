@@ -15,7 +15,7 @@ const Experience = new Schema({
         maxLength: 50
     },
 
-    duration: {
+    duration_experience: {
         type: String,
         required: false,
         maxLength: 20

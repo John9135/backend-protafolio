@@ -1,9 +1,9 @@
 const express = require('express')
 
-const cotrollerExperience = require('../controllers/experience')
+const controllerExperience = require('../controllers/experience')
 
 const router = express.Router()
 
-
+router.post('/create', controllerExperience.create)
 
 module.exports = router
