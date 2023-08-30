@@ -1,3 +1,4 @@
+const education = require('../models/education')
 const Education = require('../models/education')
 
 const controllerEducation = {
@@ -40,6 +41,17 @@ const controllerEducation = {
                 duration: duration
             })
             res.json({ msg: "update education" })
+        } catch (error) {
+            return res.status(500).json({ msg: error.message })
+        }
+    },
+
+    deleteEducation: async (req, res) => {
+        try {
+            const {id} = req.params
+            await Education.findByIdAndDelete(id)
+            res.json({msg: 'Delete education'})
+
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
