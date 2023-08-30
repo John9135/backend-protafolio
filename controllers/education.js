@@ -1,4 +1,3 @@
-const education = require('../models/education')
 const Education = require('../models/education')
 
 const controllerEducation = {
