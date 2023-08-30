@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 require("dotenv").config()
 
 const presentationRouters = require('./routers/presentation')
+const educationRouters = require('./routers/education')
 
 const app = express()
 const port = 3005
@@ -10,6 +11,7 @@ const port = 3005
 app.set('port', port)
 app.use(express.json())
 app.use('/api/presentation', presentationRouters)
+app.use('/api/education', educationRouters)
 
 app.get('/', (req, res) => {
     res.send('Holamundo')
