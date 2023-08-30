@@ -47,6 +47,16 @@ const controllerPortfolio = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+
+    deletePortfolio: async (req, res) => {
+        try {
+            const { id } = req.params
+            await Portfolio.findByIdAndDelete(id)
+            res.json({ msg: 'Delete portfolio' })
+        } catch (error) {
+            return res.status(500).json({ msg: error.message })
+        }
     }
 }
 
