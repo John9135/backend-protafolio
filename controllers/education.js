@@ -16,6 +16,15 @@ const controllerEducation = {
         } catch (error) {
             return res.status(500).json({ msg: error.message })
         }
+    },
+
+    getEducation: async (req, res) => {
+        try {
+            const education = await Education.find({})
+            res.json({ education })
+        } catch (error) {
+            return res.status(500).json({ msg: erro.message })
+        }
     }
 }
 
